@@ -1,73 +1,94 @@
 package objetos;
 
-public class Persona {
+import java.io.Serializable;
 
-	private String dni;
-	private String nombre;
-	private String email;
-	private int edad;
-	private int telefono;
-	
-	public Persona() {
-		
-	}
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-	public Persona(String dni, String nombre, String email,int edad,int telefono) {
-		super();
-		this.dni = dni;
-		this.nombre = nombre;
-		this.email = email;
-		this.telefono=telefono;
-		this.edad=edad;
-	}
 
-	public String getDni() {
-		return dni;
-	}
+@Entity
+@Table(name = "persona")
+public class Persona implements Serializable {
 
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5563649988340107708L;
 
-	public String getNombre() {
-		return nombre;
-	}
+	@Id
+    @Column(name = "dni", length = 9)
+    private String dni;
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    @Column(name = "nombre", nullable = false)
+    private String nombre;
 
-	public String getEmail() {
-		return email;
-	}
+    @Column(name = "email")
+    private String email;
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
+    @Column(name = "edad")
+    private int edad;
 
-	public int getEdad() {
-		return edad;
-	}
+    @Column(name = "telefono")
+    private int telefono;
 
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
+    public Persona() {
+        // obligatorio para JPA
+    }
 
-	public int getTelefono() {
-		return telefono;
-	}
+    public Persona(String dni, String nombre, String email, int edad, int telefono) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.email = email;
+        this.edad = edad;
+        this.telefono = telefono;
+    }
 
-	public void setTelefono(int telefono) {
-		this.telefono = telefono;
-	}
+    public String getDni() {
+        return dni;
+    }
 
-	@Override
-	public String toString() {
-		return "Persona [dni=" + dni + ", nombre=" + nombre + ", email=" + email + ", edad=" + edad + ", telefono="
-				+ telefono + "]";
-	}
-	
-	
-	
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona [dni=" + dni + ", nombre=" + nombre +
+               ", email=" + email + ", edad=" + edad +
+               ", telefono=" + telefono + "]";
+    }
 }
