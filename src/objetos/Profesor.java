@@ -1,6 +1,8 @@
 package objetos;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -42,4 +44,8 @@ public class Profesor implements Serializable {
     public String toString() {
         return "Profesor [id=" + id + ", nombre=" + nombre + "]";
     }
+    
+    @OneToMany(mappedBy = "profesor")
+    private List<Imparte> modulosImpartidos;
+
 }

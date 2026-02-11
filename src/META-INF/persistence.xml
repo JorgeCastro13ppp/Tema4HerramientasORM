@@ -13,6 +13,11 @@
 		<class>objetos.Persona</class>
 		<class>objetos.Profesor</class>
 		<class>objetos.Alumno</class>
+		<class>objetos.Nota</class>
+		<class>objetos.NotaId</class>
+		<class>objetos.Imparte</class>
+		<class>objetos.ImparteId</class>
+		<class>objetos.Modulo</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 

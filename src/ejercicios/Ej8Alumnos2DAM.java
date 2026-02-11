@@ -8,7 +8,10 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import objetos.Alumno;
-
+/*INSERT INTO alumno (nombre, curso, telefono) VALUES
+('Juan Pérez', '2DAM', 600111111),
+('Laura Gómez', '1DAM', 600222222),
+('Miguel Ruiz', '2DAM', 600333333);*/
 public class Ej8Alumnos2DAM {
 
     public static void main(String[] args) {

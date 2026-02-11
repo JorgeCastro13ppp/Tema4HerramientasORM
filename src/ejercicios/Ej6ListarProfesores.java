@@ -8,6 +8,11 @@ import javax.persistence.Persistence;
 
 import objetos.Profesor;
 
+/*INSERT INTO profesor (nombre) VALUES
+('Carlos López'),
+('Ana Martínez');
+*/
+
 public class Ej6ListarProfesores {
 
 	public static void main(String[] args) {

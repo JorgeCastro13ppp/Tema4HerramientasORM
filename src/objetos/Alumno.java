@@ -1,6 +1,8 @@
 package objetos;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -24,6 +26,12 @@ public class Alumno implements Serializable {
 
     @Column(name = "telefono")
     private int telefono;
+    
+ // Relación 1:N con Nota
+    @OneToMany(mappedBy = "alumno",
+               cascade = CascadeType.ALL,
+               orphanRemoval = true)
+    private List<Nota> notas;
 
     public Alumno() {
     }
@@ -61,10 +69,22 @@ public class Alumno implements Serializable {
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
+    
 
-    @Override
+    public List<Nota> getNotas() {
+		return notas;
+	}
+
+	public void setNotas(List<Nota> notas) {
+		this.notas = notas;
+	}
+
+	@Override
     public String toString() {
         return "Alumno [id=" + id + ", nombre=" + nombre +
                ", curso=" + curso + ", telefono=" + telefono + "]";
     }
+    
+
+
 }
