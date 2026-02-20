@@ -7,7 +7,12 @@ import javax.persistence.*;
 @Table(name = "imparte")
 public class Imparte implements Serializable {
 
-    @EmbeddedId
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1581075343814168777L;
+
+	@EmbeddedId
     private ImparteId id;
 
     @ManyToOne

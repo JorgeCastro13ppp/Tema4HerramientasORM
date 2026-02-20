@@ -8,7 +8,12 @@ import javax.persistence.*;
 @Table(name = "modulo")
 public class Modulo implements Serializable {
 
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8955802151711830074L;
+
+	@Id
     @Column(name = "codigo")
     private String codigo;
 
